@@ -1,0 +1,22 @@
+<div class="card" style="width: 18rem;">
+    <img src="..." class="card-img-top" alt="..." [src]="auction?.associatedVehicle?.vehicleImages[0]?.url" [alt]="auction?.label"> 
+    <div class="card-body">
+      <h5 class="card-title">{{auction?.label}}</h5>
+    </div>
+    <ul class="list-group list-group-flush">
+
+      <li class="list-group-item">{{auction?.associatedVehicle.ez}} </li>
+
+      <li class="list-group-item">{{auction?.associatedVehicle.mileageInKm }} KM</li>
+
+      <li class="list-group-item">{{auction?.associatedVehicle.fuelType | fuelType}}</li>
+
+      <li class="list-group-item">{{auction?.associatedVehicle.transmission| transmissionType}}</li>
+
+    </ul>
+    <div class="card-body">
+      <div> {{auction?.remainingTimeInSeconds | countdown }}  </div>
+      <span> {{auction?.currentHighestBidValue}} €</span>
+      <p class="" *ngIf="auction?.amIHighestBidder">Highest Bidder</p>
+    </div>
+  </div>
