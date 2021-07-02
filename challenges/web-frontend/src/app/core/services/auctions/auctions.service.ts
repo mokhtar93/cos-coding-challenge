@@ -15,7 +15,7 @@ export class AuctionsService {
   constructor(private http: HttpClient, private adapter: AuctionAdapter ) { }
 
   public getAuctions(): Observable<Auction[]>  {
-    return timer(0, 20 * 90000).pipe(
+    return timer(0, 20 * 1000).pipe(
         mergeMap(() => {
              return this.http.get<any>(`${environment.apiUrl}/v2/auction/buyer/?count=false`).pipe(
                        map((data) => data.items.map((item:any) => this.adapter.adapt(item)))
