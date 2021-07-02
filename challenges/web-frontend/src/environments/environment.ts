@@ -3,6 +3,7 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
+  apiUrl: 'https://api-core-dev.caronsale.de/api',
   production: false
 };
 
