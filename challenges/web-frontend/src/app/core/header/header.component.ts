@@ -13,7 +13,6 @@ export class HeaderComponent implements OnInit {
   ngOnInit(): void {
     this.authenticationService.loggedInUser.subscribe(
       (loggedin) => {
-        
           loggedin? this.loggedinUser = true: this.loggedinUser = false;
       }
     )
